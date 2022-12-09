@@ -11,6 +11,8 @@ ThisBuild / developers +=
 
 ThisBuild / crossScalaVersions := Seq(Scala2, Scala3)
 ThisBuild / scalaVersion := Scala3
+ThisBuild / githubWorkflowTargetBranches := Seq("main")
+ThisBuild / tlSonatypeUseLegacyHost := false
 
 lazy val root = tlCrossRootProject.aggregate(lib, specs)
 
