@@ -13,6 +13,7 @@ ThisBuild / crossScalaVersions := Seq(Scala2, Scala3)
 ThisBuild / scalaVersion := Scala3
 ThisBuild / githubWorkflowTargetBranches := Seq("main")
 ThisBuild / tlSonatypeUseLegacyHost := false
+ThisBuild / mimaPreviousArtifacts := Set.empty
 
 lazy val root = tlCrossRootProject.aggregate(lib, specs)
 
