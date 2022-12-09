@@ -13,7 +13,6 @@ ThisBuild / crossScalaVersions := Seq(Scala2, Scala3)
 ThisBuild / scalaVersion := Scala3
 ThisBuild / githubWorkflowTargetBranches := Seq("main")
 ThisBuild / tlSonatypeUseLegacyHost := false
-ThisBuild / mimaPreviousArtifacts := Set.empty
 
 lazy val root = tlCrossRootProject.aggregate(lib, specs)
 
@@ -23,6 +22,7 @@ lazy val specs = project
     moduleName := "s4s-lib-specs",
     autoScalaLibrary := false,
     libraryDependencies := Nil,
+    mimaPreviousArtifacts := Set.empty,
     crossPaths := false,
     crossVersion := CrossVersion.disabled,
     crossScalaVersions := Seq(Scala3),
@@ -43,6 +43,7 @@ lazy val lib = crossProject(JVMPlatform, JSPlatform)
   .in(file("s4s-lib"))
   .settings(
     moduleName := "s4s-lib",
+    mimaPreviousArtifacts := Set.empty,
     Compile / smithy4sInputDirs ++= ((specs / Compile / unmanagedResourceDirectories).value ** "*.smithy").get,
     libraryDependencies ++= Seq(
       "org.typelevel" %%% "cats-core" % "2.9.0",
