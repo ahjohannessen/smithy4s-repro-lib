@@ -1,7 +1,7 @@
 val Scala2 = "2.13.10"
 val Scala3 = "3.2.1"
 
-ThisBuild / tlBaseVersion := "0.2"
+ThisBuild / tlBaseVersion := "0.1"
 ThisBuild / organization := "io.github.ahjohannessen"
 ThisBuild / organizationName := "Alex Henning Johannessen"
 ThisBuild / startYear := Some(2022)
